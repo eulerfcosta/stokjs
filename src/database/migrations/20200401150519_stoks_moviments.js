@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return kenex.schema.createTeable('stoks' , function(table) {
+    return knex.schema.createTable('stoks_moviments' , function(table) {
         table.increments();
         table.integer('item_id').unsigned().notNullable();
         table.integer('stok_id').unsigned().notNullable();
@@ -9,12 +9,12 @@ exports.up = function(knex) {
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.fn.now());
 
-        table.foreign('item_id').references('id').inTable('items').onDelete(CASCADE);
-        table.foreign('stok_id').references('id').inTable('stoks').onDelete(CASCADE);
-        table.foreign('user_id').references('id').inTable('users').onDelete(CASCADE);
+        table.foreign('item_id').references('id').inTable('items').onDelete('CASCADE');
+        table.foreign('stok_id').references('id').inTable('stoks').onDelete('CASCADE');
+        table.foreign('user_id').references('id').inTable('users').onDelete('CASCADE');
     });
 };
 
 exports.down = function(knex) {
-    return kenex.schema.dropTable('stoks');
+    return knex.schema.dropTable('stoks_moviments');
 };

@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return kenex.schema.createTable('condominiums', function(table) {
+    return knex.schema.createTable('condominiums', function(table) {
         table.increments();
         table.string('name' , 200).notNullable();
         table.string('address' , 200).notNullable();
@@ -16,5 +16,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return kenex.schema.dropTable('condominiums');
+    return knex.schema.dropTable('condominiums');
 };

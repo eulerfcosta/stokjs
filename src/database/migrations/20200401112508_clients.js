@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return kenex.schema.createTeable('clients' , function(table) {
+    return knex.schema.createTable('clients' , function(table) {
         table.increments();
         table.string('name' , 200).notNullable();
         table.string('doc', 25).unique().notNullable();
@@ -11,5 +11,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return kenex.schema.dropTable('clients');  
+    return knex.schema.dropTable('clients');
 };

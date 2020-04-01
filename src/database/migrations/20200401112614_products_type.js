@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return kenex.schema.createTeable('products_type' , function(table) {
+    return knex.schema.createTable('products_type' , function(table) {
         table.increments();
         table.string('name' , 200).unique().notNullable();
         table.timestamp('created_at').defaultTo(knex.fn.now());
@@ -10,6 +10,6 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-    return kemex.schema.dropTable('products_type');
+    return knex.schema.dropTable('products_type');
 
 };
